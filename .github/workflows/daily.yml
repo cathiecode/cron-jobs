@@ -23,3 +23,6 @@ jobs:
       - run: npm ci --omit dev
       - run: npm run build
       - run: npm run daily
+        env:
+          NOTION_KEY: ${{ secrets.NOTION_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
