@@ -1,0 +1,33 @@
+{
+  "name": "notion-db-periodic-task",
+  "version": "0.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild --bundle --outfile=./build/index.cjs --platform=node --format=cjs ./src/main.ts",
+    "dev": "npm run build && dotenv -e .env.local node build/index.cjs daily",
+    "daily": "node build/index.cjs daily"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cathiecode/notion-db-periodic-task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cathiecode/notion-db-periodic-task/issues"
+  },
+  "homepage": "https://github.com/cathiecode/notion-db-periodic-task#readme",
+  "engines": {
+    "node": "18"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.4",
+    "esbuild": "^0.17.18"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^7.2.1"
+  }
+}
